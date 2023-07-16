@@ -1,0 +1,57 @@
+@startuml
+
+title クラス図
+
+class Firework {
+    Particle
+
+}
+
+class Sequence {
+    List<Firework> firework
+出力を上げる()
+出力を下げる()
+}
+
+class FireworksMonitor {
+    int[3] _cannon
+    setSequenceToCannon(int cannon, Sequence)
+}
+
+class Cannon{
+    int howManyExecution
+    
+    resetSequence(シークエンスを最初から再生)
+}
+
+class BallStateMonitor {
+    BallState[3] _balls
+    ballCharge(BallState ball, float howCharge)
+    resetBallCharge(BallState ball)
+    setBallColor(BallState ball, Color color)
+    resetBallColor(BallState ball)
+}
+
+class BallState{
+    float _howCharged
+    color _color
+}
+
+class UdpReceiver{
+    getData(return float[])
+
+}
+
+Firework "n" --o "1" Sequence
+Sequence "n" --o "1" FireworksMonitor
+
+BallStateMonitor "1" -- "1" FireworksMonitor
+
+UdpReceiver "3" --o "1" BallStateMonitor
+BallState "3" --o "1" BallStateMonitor
+Cannon "3" --o "1" FireworksMonitor
+
+
+
+
+@enduml

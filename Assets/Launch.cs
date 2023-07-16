@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 
 
@@ -10,8 +11,8 @@ public class Launch : MonoBehaviour
 {
     [SerializeField] GameObject launcher;
 
-    private List<Transform> _sequence;
-    private List<int> _launchNum;
+    private List<Transform> _sequence = new List<Transform>();
+    private List<int> _launchNum = new List<int>();
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +22,21 @@ public class Launch : MonoBehaviour
              _sequence.Add(childObject); 
             _launchNum.Add(0);
         }
+        LaunchFireworks();
     }
 
     // Update is called once per frame
     void Update()
     {
-        for(int i = 0; i < _sequence.Count; i++){
-        }
+        
     }
 
-    void LaunchFireworks(){
+    private  async void LaunchFireworks(){
 
-        _sequence[i].GetComponent<ParticleSystem>().Play();
-        
+        for(int i = 0; i < _sequence.Count; i++){
+            _sequence[i].GetComponent<ParticleSystem>().Play();
+            await Task.Delay(5000);
+        }    
 
 
     }
