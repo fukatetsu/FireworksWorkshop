@@ -9,32 +9,42 @@ class Firework {
 
 class Sequence {
     List<Firework> firework
-出力を上げる()
-出力を下げる()
+
+    launch(){}
 }
 
 class FireworksMonitor {
-    int[3] _cannon
-    setSequenceToCannon(int cannon, Sequence)
+    Cannon[3] _cannon
+    List<Sequence> _sequences
+
+
 }
 
 class Cannon{
-    int howManyExecution
+    int _howManyExecution
+    Sequence _sequence
     
-    resetSequence(シークエンスを最初から再生)
+    resetSequence(){シークエンスを最初から再生}
+    launch(int _howManyExecution){指定した番号を発射}
+    setSequence(int cannon, Sequence)
+    
+    
 }
 
 class BallStateMonitor {
     BallState[3] _balls
-    ballCharge(BallState ball, float howCharge)
-    resetBallCharge(BallState ball)
-    setBallColor(BallState ball, Color color)
-    resetBallColor(BallState ball)
+
+    
 }
 
 class BallState{
     float _howCharged
     color _color
+
+    ballCharge(BallState ball, float howCharge)
+    resetBallCharge(BallState ball)
+    setBallColor(BallState ball, Color color)
+    resetBallColor(BallState ball)
 }
 
 class UdpReceiver{
