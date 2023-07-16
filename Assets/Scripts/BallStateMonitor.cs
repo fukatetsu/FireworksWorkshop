@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallStateMonitor : MonoBehaviour
 {
     [SerializeField] private UdpReceiver[] udpReceiver = new UdpReceiver[3];
-    private BallState[] ballState = new BallState[3];
+    private BallState[] _ballState = new BallState[3];
 
     // Start is called before the first frame update
     void Start()
@@ -26,19 +26,17 @@ public class BallStateMonitor : MonoBehaviour
     /// <param name="num">BallStateの添え字</param>
     void BallUpdate(int num){
         float[] data = udpReceiver[num].GetData();
-        ballState[num].acc = new Vector3(data[1], data[2], data[3]);
-        ballState[num].avv = new Vector3(data[4], data[5], data[6]);
-        ballState[num].rot = new Vector3(data[7], data[8], data[9]);
-        ballState[num].qtn = new Quaternion(data[11], data[12], data[13], data[10]);
-        ballState[num].ChargeEnergy();
-        ballState[num].ChangeLEDColor();
+        _ballState[num].BallCharge(new Vector3(data[1], data[2], data[3]).magnitude);
+
     }
 
     /// <summary>
     /// 花火の発射
     /// </summary>
     /// <param name="num"></param>
-    void Launch(int num){}
+    void Launch(int num){
+        _ballState[num].ResetBallCharge();
+    }
     
 }
 
@@ -47,21 +45,41 @@ public class BallStateMonitor : MonoBehaviour
 /// </summary>
 public class BallState{
 
-    public Vector3 acc { get; set; }
-    public Vector3 avv { get; set; }
-    public Vector3 rot { get; set; }
-    public Quaternion qtn { get; set; }
-    public float chargedEnergy {get; set;}
+    /// <summary>
+    /// エネルギーがどれくらい溜まっているか
+    /// </summary>
+    private float _howCharged;
 
-    public void ChargeEnergy(){
-
+    public float HowCharged { 
+        get { return _howCharged; }
+        set { this._howCharged = value; }
+    }
+    
+    BallState(){
+       _howCharged = 0.0f;
     }
 
-    public void ChangeLEDColor(){
-
+    /// <summary>
+    /// ボールにエネルギーをためる
+    /// </summary>
+    /// <param name="charge">エネルギーをためる量</param>
+    public void BallCharge(float charge){
+        _howCharged += charge;
+    }
+    /// <summary>
+    /// 溜まったエネルギーをリセットする
+    /// </summary>
+    public void ResetBallCharge(){
+        _howCharged = 0.0f;
     }
 
-    public void Launch(){}
+    /// <summary>
+    /// ボールに花火を発射できるだけのエネルギーが溜まっているか
+    /// </summary>
+    public bool IsCharged(){
+        return true;
+    }       
+
 
 
 }

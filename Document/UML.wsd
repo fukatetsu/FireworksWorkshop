@@ -34,6 +34,8 @@ class Cannon{
 class BallStateMonitor {
     BallState[3] _balls
 
+    BallUpdate(int num){ボールの状態を更新する}
+
     
 }
 
@@ -41,10 +43,10 @@ class BallState{
     float _howCharged
     color _color
 
-    ballCharge(BallState ball, float howCharge)
-    resetBallCharge(BallState ball)
-    setBallColor(BallState ball, Color color)
-    resetBallColor(BallState ball)
+    ballCharge(, float howCharge)
+    resetBallCharge()
+    setBallColor(, Color color)
+    resetBallColor()
 }
 
 class UdpReceiver{
