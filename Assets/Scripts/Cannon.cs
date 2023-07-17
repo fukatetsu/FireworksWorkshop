@@ -12,7 +12,8 @@ public class Cannon : MonoBehaviour
     /// <summary>
     /// sequenceの何発目まで発射したか
     /// </summary>
-    public int _howManyExecution{
+    private int _howManyExecution;
+    public int HowManyExecution{
         get { return _howManyExecution ;}
         set { _howManyExecution = value; }
     }
@@ -25,7 +26,8 @@ public class Cannon : MonoBehaviour
     /// 装填されているシークエンス
     /// </summary>
     /// <value></value>
-    public Sequence _sequence{
+    private Sequence _sequence;
+    public Sequence Sequence{
         set { _sequence = value; }
         get {return this._sequence;}
     } 
@@ -55,7 +57,10 @@ public class Cannon : MonoBehaviour
     
 
     public void Launch(){
-        _sequence.Launch(_howManyExecution);
-        _howManyExecution++;
+        if(_maxExecution > _howManyExecution){
+            _sequence.Launch(_howManyExecution);
+            _howManyExecution++;
+        }
+        
     }
 }

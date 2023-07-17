@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Base" style="height: 100%; display: flex; background-color: rgb(35, 43, 55); width: auto;">
+        <ui:GroupBox name="LeftCannon">
+            <ui:Label text="Left" display-tooltip-when-elided="true" name="PositionLabel" style="width: 53px; -unity-text-align: upper-left;" />
+            <ui:Button text="Launch" display-tooltip-when-elided="true" name="LaunchButton" />
+            <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" />
+            <ui:Button text="Charge" display-tooltip-when-elided="true" name="ChargeButton" />
+        </ui:GroupBox>
+        <ui:GroupBox name="CenterCannon">
+            <ui:Label text="Center" display-tooltip-when-elided="true" name="PositionLabel" style="width: 53px; -unity-text-align: upper-left;" />
+            <ui:Button text="Launch" display-tooltip-when-elided="true" name="LaunchButton" />
+            <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" />
+            <ui:Button text="Charge" display-tooltip-when-elided="true" name="ChargeButton" />
+        </ui:GroupBox>
+        <ui:GroupBox name="RightCannon">
+            <ui:Label text="Right" display-tooltip-when-elided="true" name="PositionLabel" style="width: 53px; -unity-text-align: upper-left;" />
+            <ui:Button text="Launch" display-tooltip-when-elided="true" name="LaunchButton" />
+            <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" />
+            <ui:Button text="Charge" display-tooltip-when-elided="true" name="ChargeButton" />
+        </ui:GroupBox>
+    </ui:VisualElement>
+</ui:UXML>
