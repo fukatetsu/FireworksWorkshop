@@ -10,7 +10,10 @@ public class BallStateMonitor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        for(int i = 0; i < _ballState.Length; i++){
+
+            _ballState[i] = new BallState();
+        }
     }
 
     // Update is called once per frame
@@ -37,7 +40,9 @@ public class BallStateMonitor : MonoBehaviour
     public void Launch(int num){
         _ballState[num].ResetBallCharge();
     }
-    
+    public void Reset(int num){
+        _ballState[num].ResetBallCharge();
+    }
 }
 
 /// <summary>
@@ -64,7 +69,7 @@ public class BallState{
         set{ this._isCharged = value;}
     }
 
-    BallState(){
+    public BallState(){
        _howCharged = 0.0f;
        _isCharged = false;
     }

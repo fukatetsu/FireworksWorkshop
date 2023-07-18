@@ -6,7 +6,7 @@ using UnityEngine;
 /// <summary>
 /// 花火の砲台。sequenceを入れ替えながらセットしていく
 /// </summary>
-public class Cannon : MonoBehaviour
+public class Cannon
 {
 
     /// <summary>
@@ -27,13 +27,13 @@ public class Cannon : MonoBehaviour
     /// </summary>
     /// <value></value>
     private Sequence _sequence;
-    public Sequence Sequence{
-        set { _sequence = value; }
+    public Sequence sequence{
+        set { _sequence = Sequence(value); }
         get {return this._sequence;}
     } 
     
-    Cannon(Sequence sequence){
-        _sequence = sequence;
+    public Cannon(Transform sequence){
+        _sequence = new Sequence(sequence);
         _howManyExecution = 0;
         _maxExecution = _sequence.SequenceLength();
     }
@@ -50,7 +50,7 @@ public class Cannon : MonoBehaviour
         
     }
 
-    public void ResetExecution(){
+    public void Reset(){
         _howManyExecution = 0;
     }
 

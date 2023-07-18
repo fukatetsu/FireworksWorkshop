@@ -2,20 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Sequence : MonoBehaviour
+public class Sequence
 {
 
 
     private List<Transform> _fireworks = new List<Transform>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        foreach (Transform childObject in this.transform)
+
+    public Sequence(Transform transform){
+        foreach (Transform childObject in transform)
         {
              _fireworks.Add(childObject); 
         }
     }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+
 
     // Update is called once per frame
     void Update()
