@@ -80,11 +80,21 @@ public class LaunchUI : MonoBehaviour
 
         dropdown.RegisterValueChangedCallback(evt =>
         {
-            _fireworksMonitor.cannon[num].
-            if (EditorUtility.DisplayDialog("ドロップダウン", evt.newValue, "OK"))
-            {
-                Debug.Log("Click");
+            Debug.Log($"{evt.newValue}");
+            foreach(Transform sequence in _fireworksMonitor.sequences){
+
+            Debug.Log($"{sequence.name}");
+
+                if(sequence.name == evt.newValue){
+                    _fireworksMonitor.SetSequenceToCannon(num,sequence);
+                    
+
+                }
             }
+            // if (EditorUtility.DisplayDialog("ドロップダウン", evt.newValue, "OK"))
+            // {
+            //     Debug.Log("Click");
+            // }
         });
     }
     

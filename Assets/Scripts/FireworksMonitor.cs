@@ -37,4 +37,7 @@ public class FireworksMonitor : MonoBehaviour
         _ballStateMonitor.Reset(num);
         _cannon[num].Reset();
     }
+    public void SetSequenceToCannon(int cannonNum, Transform transform){
+        _cannon[cannonNum].SetSequence(transform);
+    }
 }

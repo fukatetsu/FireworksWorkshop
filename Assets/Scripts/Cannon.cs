@@ -28,7 +28,7 @@ public class Cannon
     /// <value></value>
     private Sequence _sequence;
     public Sequence sequence{
-        set { _sequence = Sequence(value); }
+        set { _sequence = value; }
         get {return this._sequence;}
     } 
     
@@ -62,5 +62,10 @@ public class Cannon
             _howManyExecution++;
         }
         
+    }
+    public void SetSequence(Transform sequence){
+        _sequence = new Sequence(sequence);
+        _howManyExecution = 0;
+        _maxExecution = _sequence.SequenceLength();
     }
 }
