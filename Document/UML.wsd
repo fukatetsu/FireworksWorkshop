@@ -54,6 +54,13 @@ class UdpReceiver{
 
 }
 
+class KeyInputMonitor{
+    BallStateMonitor _ballStateMonitor
+    FireworksMonitor _fireworksMonitor
+
+    Launch(int num)
+}
+
 Firework "n" --o "1" Sequence
 Sequence "n" --o "1" FireworksMonitor
 
@@ -62,6 +69,11 @@ BallStateMonitor "1" -- "1" FireworksMonitor
 UdpReceiver "3" --o "1" BallStateMonitor
 BallState "3" --o "1" BallStateMonitor
 Cannon "3" --o "1" FireworksMonitor
+
+KeyInputMonitor "1" -- "1" FireworksMonitor
+KeyInputMonitor "1" -- "1" BallStateMonitor
+
+
 
 
 

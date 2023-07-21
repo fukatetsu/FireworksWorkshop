@@ -10,7 +10,10 @@ public class BallStateMonitor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        for(int i = 0; i < _ballState.Length; i++){
+
+            _ballState[i] = new BallState();
+        }
     }
 
     // Update is called once per frame
@@ -34,10 +37,12 @@ public class BallStateMonitor : MonoBehaviour
     /// 花火の発射
     /// </summary>
     /// <param name="num"></param>
-    void Launch(int num){
+    public void Launch(int num){
         _ballState[num].ResetBallCharge();
     }
-    
+    public void Reset(int num){
+        _ballState[num].ResetBallCharge();
+    }
 }
 
 /// <summary>
@@ -50,13 +55,23 @@ public class BallState{
     /// </summary>
     private float _howCharged;
 
+
     public float HowCharged { 
         get { return _howCharged; }
         set { this._howCharged = value; }
     }
-    
-    BallState(){
+    /// <summary>
+    /// ボールに花火を発射できるだけのエネルギーが溜まっているか
+    /// </summary>
+    private bool _isCharged;
+    public bool IsCharged {
+        get { return _isCharged;}
+        set{ this._isCharged = value;}
+    }
+
+    public BallState(){
        _howCharged = 0.0f;
+       _isCharged = false;
     }
 
     /// <summary>
@@ -65,20 +80,20 @@ public class BallState{
     /// <param name="charge">エネルギーをためる量</param>
     public void BallCharge(float charge){
         _howCharged += charge;
+        if(_howCharged >=100){
+            _isCharged = true;
+        }
     }
     /// <summary>
     /// 溜まったエネルギーをリセットする
     /// </summary>
     public void ResetBallCharge(){
         _howCharged = 0.0f;
+        _isCharged = false;
     }
 
-    /// <summary>
-    /// ボールに花火を発射できるだけのエネルギーが溜まっているか
-    /// </summary>
-    public bool IsCharged(){
-        return true;
-    }       
+
+
 
 
 

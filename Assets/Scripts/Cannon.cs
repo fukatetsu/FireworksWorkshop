@@ -6,13 +6,14 @@ using UnityEngine;
 /// <summary>
 /// 花火の砲台。sequenceを入れ替えながらセットしていく
 /// </summary>
-public class Cannon : MonoBehaviour
+public class Cannon
 {
 
     /// <summary>
     /// sequenceの何発目まで発射したか
     /// </summary>
-    public int _howManyExecution{
+    private int _howManyExecution;
+    public int HowManyExecution{
         get { return _howManyExecution ;}
         set { _howManyExecution = value; }
     }
@@ -25,13 +26,14 @@ public class Cannon : MonoBehaviour
     /// 装填されているシークエンス
     /// </summary>
     /// <value></value>
-    public Sequence _sequence{
+    private Sequence _sequence;
+    public Sequence sequence{
         set { _sequence = value; }
         get {return this._sequence;}
     } 
     
-    Cannon(Sequence sequence){
-        _sequence = sequence;
+    public Cannon(Transform sequence){
+        _sequence = new Sequence(sequence);
         _howManyExecution = 0;
         _maxExecution = _sequence.SequenceLength();
     }
@@ -48,14 +50,22 @@ public class Cannon : MonoBehaviour
         
     }
 
-    public void ResetExecution(){
+    public void Reset(){
         _howManyExecution = 0;
     }
 
     
 
     public void Launch(){
-        _sequence.Launch(_howManyExecution);
-        _howManyExecution++;
+        if(_maxExecution > _howManyExecution){
+            _sequence.Launch(_howManyExecution);
+            _howManyExecution++;
+        }
+        
+    }
+    public void SetSequence(Transform sequence){
+        _sequence = new Sequence(sequence);
+        _howManyExecution = 0;
+        _maxExecution = _sequence.SequenceLength();
     }
 }
