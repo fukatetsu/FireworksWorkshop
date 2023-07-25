@@ -9,7 +9,7 @@ public class FireworksMonitor : MonoBehaviour
     public List<Transform> sequences{
         get { return _sequences;}
     }
-    private Cannon[] _cannon = new Cannon[3];
+    [SerializeField] private List<Cannon> _cannon;
 
     public Cannon[] cannon { get; set; }
 
@@ -17,7 +17,7 @@ public class FireworksMonitor : MonoBehaviour
     void Start()
     {
         for(int i = 0; i < System.Math.Min(_sequences.Count,3); i++){
-            _cannon[i] = new Cannon(_sequences[i]);
+            _cannon[i].SetSequence(_sequences[i]);
         }
     }
 
@@ -30,8 +30,10 @@ public class FireworksMonitor : MonoBehaviour
     /// 花火の発射
     /// </summary>
     public void Launch(int num){
-        _ballStateMonitor.Launch(num);
         _cannon[num].Launch();
+        if(_cannon[num].MaxExecution == _cannon[num].HowManyExecution){
+            _ballStateMonitor.Launch(num);
+        }
     }
     public void Reset(int num){
         _ballStateMonitor.Reset(num);

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5348257244040925535}
   - component: {fileID: 5348257244040925520}
   - component: {fileID: 5348257244040925521}
+  - component: {fileID: 3814208021930981502}
   m_Layer: 0
   m_Name: Spark
   m_TagString: Untagged
@@ -662,7 +663,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 30
+    angle: 44.06
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -4871,6 +4872,27 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &3814208021930981502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348257244040925522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691fa3da023cb3c4bbeedf2643327ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BornSounds:
+  - {fileID: 8300000, guid: 18acf4f0478a06946b769c9010e7235c, type: 3}
+  - {fileID: 8300000, guid: 37f7fecebd0ca2142bec593d474b5733, type: 3}
+  - {fileID: 8300000, guid: 4f50eb66e4c17f1499930a46b86a8273, type: 3}
+  - {fileID: 8300000, guid: 9d13a00ef7456f94a9211bc2085627fe, type: 3}
+  - {fileID: 8300000, guid: 9dc628a177ac2254c8095362ce6a2feb, type: 3}
+  DieSounds:
+  - {fileID: 0}
+  DelayTime: 0.05
 --- !u!1 &5348257244560640688
 GameObject:
   m_ObjectHideFlags: 0
@@ -4882,6 +4904,7 @@ GameObject:
   - component: {fileID: 5348257244560640701}
   - component: {fileID: 5348257244560640702}
   - component: {fileID: 5348257244560640703}
+  - component: {fileID: 1694237840367625347}
   m_Layer: 0
   m_Name: WillowFireworks
   m_TagString: Untagged
@@ -8740,7 +8763,7 @@ ParticleSystem:
     - serializedVersion: 3
       emitter: {fileID: 5348257244040925520}
       type: 2
-      properties: 0
+      properties: 4
       emitProbability: 1
     - serializedVersion: 3
       emitter: {fileID: 5348257245671847154}
@@ -9748,6 +9771,27 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &1694237840367625347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348257244560640688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691fa3da023cb3c4bbeedf2643327ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BornSounds:
+  - {fileID: 8300000, guid: 8e0052daf47fe9f4eb027fb2d070286c, type: 3}
+  - {fileID: 8300000, guid: f92fd6d00b4b9e24d90fdac11797c384, type: 3}
+  - {fileID: 8300000, guid: d440e15779aa3c74da97cdfb5ccdc68e, type: 3}
+  - {fileID: 8300000, guid: 51715a73a5edbf942b78cef259f6e1f0, type: 3}
+  - {fileID: 8300000, guid: 0da2f3d59a196b743b2b8a01f8c03b3d, type: 3}
+  DieSounds:
+  - {fileID: 0}
+  DelayTime: 0
 --- !u!1 &5348257245671847155
 GameObject:
   m_ObjectHideFlags: 0

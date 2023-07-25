@@ -4882,6 +4882,7 @@ GameObject:
   - component: {fileID: 4899054599030578754}
   - component: {fileID: 4899054599030578753}
   - component: {fileID: 4899054599030578752}
+  - component: {fileID: 9179569512443084065}
   m_Layer: 0
   m_Name: BurstFireworks
   m_TagString: Untagged
@@ -9748,6 +9749,27 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &9179569512443084065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899054599030578767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691fa3da023cb3c4bbeedf2643327ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BornSounds:
+  - {fileID: 8300000, guid: 8e0052daf47fe9f4eb027fb2d070286c, type: 3}
+  - {fileID: 8300000, guid: f92fd6d00b4b9e24d90fdac11797c384, type: 3}
+  - {fileID: 8300000, guid: d440e15779aa3c74da97cdfb5ccdc68e, type: 3}
+  - {fileID: 8300000, guid: 51715a73a5edbf942b78cef259f6e1f0, type: 3}
+  - {fileID: 8300000, guid: 0da2f3d59a196b743b2b8a01f8c03b3d, type: 3}
+  DieSounds:
+  - {fileID: 0}
+  DelayTime: 0
 --- !u!1 &4899054599551075757
 GameObject:
   m_ObjectHideFlags: 0
@@ -9759,6 +9781,7 @@ GameObject:
   - component: {fileID: 4899054599551075744}
   - component: {fileID: 4899054599551075759}
   - component: {fileID: 4899054599551075758}
+  - component: {fileID: 6848803494079615461}
   m_Layer: 0
   m_Name: Spark
   m_TagString: Untagged
@@ -14620,6 +14643,27 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6848803494079615461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4899054599551075757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691fa3da023cb3c4bbeedf2643327ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BornSounds:
+  - {fileID: 8300000, guid: 18acf4f0478a06946b769c9010e7235c, type: 3}
+  - {fileID: 8300000, guid: 37f7fecebd0ca2142bec593d474b5733, type: 3}
+  - {fileID: 8300000, guid: 4f50eb66e4c17f1499930a46b86a8273, type: 3}
+  - {fileID: 8300000, guid: 9d13a00ef7456f94a9211bc2085627fe, type: 3}
+  - {fileID: 8300000, guid: 9dc628a177ac2254c8095362ce6a2feb, type: 3}
+  DieSounds:
+  - {fileID: 0}
+  DelayTime: 0.6
 --- !u!1 &4899054600074141708
 GameObject:
   m_ObjectHideFlags: 0
