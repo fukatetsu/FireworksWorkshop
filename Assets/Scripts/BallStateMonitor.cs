@@ -1,25 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[DefaultExecutionOrder(-5)]
 public class BallStateMonitor : MonoBehaviour
 {
     [SerializeField] private UdpReceiver[] udpReceiver = new UdpReceiver[3];
-    private BallState[] _ballState = new BallState[3];
-
+    private BallState[] _ballState;
+    public BallState[] BallState{
+        get { return _ballState; }
+    }
     // Start is called before the first frame update
-    void Start()
-    {
+
+    // BallStateMonitor(){
+    //     _ballState = new BallState[3];
+    //     for(int i = 0; i < _ballState.Length; i++){
+
+    //         _ballState[i] = new BallState();
+    //     }
+    // }
+
+    void Awake(){
+        _ballState = new BallState[3];
         for(int i = 0; i < _ballState.Length; i++){
 
             _ballState[i] = new BallState();
         }
     }
+    void Start()
+    {
+        
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        for(int i = 0; i < udpReceiver.Length; i++){
+            BallUpdate(i);
+        }
     }
 
 
@@ -29,7 +46,7 @@ public class BallStateMonitor : MonoBehaviour
     /// <param name="num">BallStateの添え字</param>
     void BallUpdate(int num){
         float[] data = udpReceiver[num].GetData();
-        _ballState[num].BallCharge(new Vector3(data[1], data[2], data[3]).magnitude);
+        _ballState[num].BallCharge(new Vector3(data[1], data[2], data[3]).magnitude/100);
 
     }
 
@@ -42,6 +59,10 @@ public class BallStateMonitor : MonoBehaviour
     }
     public void Reset(int num){
         _ballState[num].ResetBallCharge();
+    }
+
+    public float HowCharged(int num){
+        return _ballState[num].HowCharged;
     }
 }
 

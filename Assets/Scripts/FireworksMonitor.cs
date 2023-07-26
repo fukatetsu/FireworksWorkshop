@@ -30,9 +30,13 @@ public class FireworksMonitor : MonoBehaviour
     /// 花火の発射
     /// </summary>
     public void Launch(int num){
-        _cannon[num].Launch();
-        if(_cannon[num].MaxExecution == _cannon[num].HowManyExecution){
-            _ballStateMonitor.Launch(num);
+        if(_ballStateMonitor.BallState[num].IsCharged){
+
+            _cannon[num].Launch();
+            if(_cannon[num].MaxExecution == _cannon[num].HowManyExecution){
+                _cannon[num].Reset();
+                _ballStateMonitor.Launch(num);
+            }
         }
     }
     public void Reset(int num){
