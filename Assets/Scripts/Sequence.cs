@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Sequence
 {
@@ -9,10 +10,11 @@ public class Sequence
     private List<Transform> _fireworks = new List<Transform>();
 
 
-    public Sequence(Transform transform){
+    public Sequence(Transform transform, Vector3 position){
         foreach (Transform childObject in transform)
         {
              _fireworks.Add(childObject); 
+             _fireworks.Last().transform.position = position; 
         }
     }
 

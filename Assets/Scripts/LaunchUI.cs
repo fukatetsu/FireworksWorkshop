@@ -35,6 +35,10 @@ public class LaunchUI : MonoBehaviour
         SetSequenceDropdownList(leftElement,0);
         SetSequenceDropdownList(centerElement,1);
         SetSequenceDropdownList(rightElement,2);
+
+        AddBallChargeText(leftElement,0);
+        AddBallChargeText(centerElement,1);
+        AddBallChargeText(rightElement,2);
     }
 
     // Update is called once per frame
@@ -60,11 +64,11 @@ public class LaunchUI : MonoBehaviour
             Debug.Log($"Cannon {num} : charge");
         };
     }
-    void AddSetSequenceButton(VisualElement visualElement){
-        var setSequenceButton = new UnityEngine.UIElements.Button();
-        setSequenceButton.name = "SetSequence";
-        visualElement.Add(setSequenceButton);
-        setSequenceButton.text = "Set Sequence";
+    void AddBallChargeText(VisualElement visualElement, int num){
+        var BallChargeText = new UnityEngine.UIElements.Button();
+        BallChargeText.name = $"BallCharge_{num}";
+        visualElement.Add(BallChargeText);
+        BallChargeText.text = $"{num}";
     }
 
     void SetSequenceDropdownList(VisualElement visualElement, int num){

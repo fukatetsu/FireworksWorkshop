@@ -4823,6 +4823,7 @@ GameObject:
   - component: {fileID: 8899039259938815175}
   - component: {fileID: 8899039259938815172}
   - component: {fileID: 8899039259938815173}
+  - component: {fileID: 5263019708617259541}
   m_Layer: 0
   m_Name: TrailFireworks
   m_TagString: Untagged
@@ -9689,6 +9690,27 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &5263019708617259541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899039259938815178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691fa3da023cb3c4bbeedf2643327ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BornSounds:
+  - {fileID: 8300000, guid: 8e0052daf47fe9f4eb027fb2d070286c, type: 3}
+  - {fileID: 8300000, guid: f92fd6d00b4b9e24d90fdac11797c384, type: 3}
+  - {fileID: 8300000, guid: d440e15779aa3c74da97cdfb5ccdc68e, type: 3}
+  - {fileID: 8300000, guid: 51715a73a5edbf942b78cef259f6e1f0, type: 3}
+  - {fileID: 8300000, guid: 0da2f3d59a196b743b2b8a01f8c03b3d, type: 3}
+  DieSounds:
+  - {fileID: 0}
+  DelayTime: 0
 --- !u!1 &8899039260458493736
 GameObject:
   m_ObjectHideFlags: 0
@@ -9700,6 +9722,7 @@ GameObject:
   - component: {fileID: 8899039260458493733}
   - component: {fileID: 8899039260458493738}
   - component: {fileID: 8899039260458493739}
+  - component: {fileID: 750663833760157125}
   m_Layer: 0
   m_Name: Spark
   m_TagString: Untagged
@@ -11044,7 +11067,7 @@ ParticleSystem:
         m_RotationOrder: 4
     separateAxes: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       serializedVersion: 2
       minMaxState: 1
@@ -11052,7 +11075,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.44673097, g: 0.8490566, b: 0.18823424, a: 1}
         key1: {r: 1, g: 1, b: 1, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -14560,3 +14583,20 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &750663833760157125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8899039260458493736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691fa3da023cb3c4bbeedf2643327ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BornSounds:
+  - {fileID: 8300000, guid: 18acf4f0478a06946b769c9010e7235c, type: 3}
+  DieSounds:
+  - {fileID: 0}
+  DelayTime: 0.05

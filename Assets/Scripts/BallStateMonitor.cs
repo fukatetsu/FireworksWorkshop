@@ -90,6 +90,8 @@ public class BallState{
     public void ResetBallCharge(){
         _howCharged = 0.0f;
         _isCharged = false;
+        Debug.Log($"Ball was reset");
+
     }
 
 
