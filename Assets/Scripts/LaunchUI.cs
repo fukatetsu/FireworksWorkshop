@@ -36,9 +36,7 @@ public class LaunchUI : MonoBehaviour
         SetSequenceDropdownList(centerElement,1);
         SetSequenceDropdownList(rightElement,2);
 
-        AddBallChargeText(leftElement,0);
-        AddBallChargeText(centerElement,1);
-        AddBallChargeText(rightElement,2);
+        
     }
 
     // Update is called once per frame
@@ -61,8 +59,14 @@ public class LaunchUI : MonoBehaviour
         var chargeButton = visualElement.Q<Button>("ChargeButton");
         chargeButton.clicked +=() =>
         {
-            Debug.Log($"Cannon {num} : charge");
+             _ballStateMonitor.BallState[num].BallCharge(10f);
         };
+        var energyProgress = visualElement.Q<ProgressBar>("BallEnergy");
+        energyProgress.schedule.Execute(() =>
+        {
+            energyProgress.value = _ballStateMonitor.HowCharged(num);
+            // energyProgress.value += 1f;
+        }).Every(10) ;
     }
     void AddBallChargeText(VisualElement visualElement, int num){
         var BallChargeText = new UnityEngine.UIElements.Button();

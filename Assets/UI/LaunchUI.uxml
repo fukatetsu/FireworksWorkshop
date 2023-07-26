@@ -6,6 +6,7 @@
             <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" style="height: 20px;" />
             <ui:Button text="Charge" display-tooltip-when-elided="true" name="ChargeButton" style="height: 20px;" />
             <ui:DropdownField label="Sequence" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="SequenceDropdown" style="height: 30px; justify-content: center; -unity-text-align: upper-left; align-items: flex-start;" />
+            <ui:ProgressBar value="0" title="Ball Energy" name="BallEnergy" />
         </ui:GroupBox>
         <ui:GroupBox name="CenterCannon" style="align-items: stretch;">
             <ui:Label text="Center" display-tooltip-when-elided="true" name="PositionLabel" style="width: 53px; -unity-text-align: upper-left;" />
@@ -13,6 +14,7 @@
             <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" style="height: 20px;" />
             <ui:Button text="Charge" display-tooltip-when-elided="true" name="ChargeButton" style="height: 20px;" />
             <ui:DropdownField label="Sequence" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="SequenceDropdown" style="height: 30px;" />
+            <ui:ProgressBar value="0" title="Ball Energy" name="BallEnergy" />
         </ui:GroupBox>
         <ui:GroupBox name="RightCannon" style="height: 30px;">
             <ui:Label text="Right" display-tooltip-when-elided="true" name="PositionLabel" style="width: 53px; -unity-text-align: upper-left; background-color: rgba(255, 255, 255, 0);" />
@@ -20,6 +22,7 @@
             <ui:Button text="Reset" display-tooltip-when-elided="true" name="ResetButton" style="height: 20px;" />
             <ui:Button text="Charge" display-tooltip-when-elided="true" name="ChargeButton" style="height: 20px;" />
             <ui:DropdownField label="Sequence" index="-1" choices="System.Collections.Generic.List`1[System.String]" name="SequenceDropdown" style="height: 30px;" />
+            <ui:ProgressBar value="0" title="Ball Energy" name="BallEnergy" />
         </ui:GroupBox>
     </ui:VisualElement>
 </ui:UXML>
