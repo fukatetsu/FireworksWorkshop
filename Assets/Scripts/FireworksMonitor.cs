@@ -30,6 +30,7 @@ public class FireworksMonitor : MonoBehaviour
     /// 花火の発射
     /// </summary>
     public void Launch(int num){
+        Debug.Log($"Launch button {num}");
         if(_ballStateMonitor.BallState[num].IsCharged){
 
             _cannon[num].Launch();
