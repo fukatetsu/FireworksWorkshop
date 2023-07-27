@@ -78,7 +78,7 @@ public class ParticleSoundSystem: MonoBehaviour
             
             sound.SetVolume(1.0f);
             sound.Min3DDistance = 20;
-            sound.Max3DDistance = 250;
+            sound.Max3DDistance = 10000;
             sound.SpatialBlend  = 1f;
             sound.Spread        = 60f;
             sound.DopplerLevel  = 0f;
