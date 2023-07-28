@@ -765,7 +765,7 @@ GameObject:
   - component: {fileID: 542625564}
   - component: {fileID: 542625565}
   m_Layer: 0
-  m_Name: Cannon0
+  m_Name: LeftCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -991,6 +991,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1410102835}
     m_Modifications:
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1104620979}
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetNextSequenceToCannon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FireworksMonitor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6447031591097779564, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1467,9 +1483,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ballStateMonitor: {fileID: 74317960}
-  _sequences:
+  _centerSequences:
   - {fileID: 1540783740}
   - {fileID: 2007836501}
+  - {fileID: 669287185}
+  _leftSequences:
+  - {fileID: 669287185}
+  - {fileID: 2007836501}
+  - {fileID: 1540783740}
+  _rightSequences:
+  - {fileID: 2007836501}
+  - {fileID: 1540783740}
   - {fileID: 669287185}
   _cannon:
   - {fileID: 542625565}
@@ -1687,7 +1711,7 @@ GameObject:
   - component: {fileID: 1238098818}
   - component: {fileID: 1238098819}
   m_Layer: 0
-  m_Name: Cannon1
+  m_Name: CenterCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1812,6 +1836,10 @@ PrefabInstance:
     - target: {fileID: 244608951954327400, guid: 0ff3e37ba29c18243a1bef0339246b75, type: 3}
       propertyPath: m_Name
       value: UDPReceiver_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669080861838206137, guid: 0ff3e37ba29c18243a1bef0339246b75, type: 3}
+      propertyPath: _rcvPort
+      value: 50002
       objectReference: {fileID: 0}
     - target: {fileID: 1865049170173484156, guid: 0ff3e37ba29c18243a1bef0339246b75, type: 3}
       propertyPath: m_RootOrder
@@ -2155,6 +2183,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1410102835}
     m_Modifications:
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1104620979}
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetNextSequenceToCannon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FireworksMonitor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6447031591097779564, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2634,7 +2678,7 @@ GameObject:
   - component: {fileID: 2078860751}
   - component: {fileID: 2078860752}
   m_Layer: 0
-  m_Name: Cannon2
+  m_Name: RightCannon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2648,7 +2692,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078860750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 323, y: 0, z: 175}
+  m_LocalPosition: {x: 291.7, y: 0, z: 83.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2677,6 +2721,10 @@ PrefabInstance:
     - target: {fileID: 244608951954327400, guid: 0ff3e37ba29c18243a1bef0339246b75, type: 3}
       propertyPath: m_Name
       value: UDPReceiver_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1669080861838206137, guid: 0ff3e37ba29c18243a1bef0339246b75, type: 3}
+      propertyPath: _rcvPort
+      value: 50003
       objectReference: {fileID: 0}
     - target: {fileID: 1865049170173484156, guid: 0ff3e37ba29c18243a1bef0339246b75, type: 3}
       propertyPath: m_RootOrder
@@ -3008,6 +3056,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1410102835}
     m_Modifications:
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1104620979}
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetNextSequenceToCannon
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FireworksMonitor, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2828061552256636700, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6447031591097779564, guid: 7aa8efe21f875344db819f4cf846e50e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

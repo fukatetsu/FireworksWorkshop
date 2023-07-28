@@ -32,9 +32,9 @@ public class LaunchUI : MonoBehaviour
         AddButtonEvent(centerElement, 1);
         AddButtonEvent(rightElement, 2);
 
-        SetSequenceDropdownList(leftElement,0);
-        SetSequenceDropdownList(centerElement,1);
-        SetSequenceDropdownList(rightElement,2);
+        // SetSequenceDropdownList(leftElement,0);
+        // SetSequenceDropdownList(centerElement,1);
+        // SetSequenceDropdownList(rightElement,2);
 
         
     }
@@ -75,36 +75,36 @@ public class LaunchUI : MonoBehaviour
         BallChargeText.text = $"{num}";
     }
 
-    void SetSequenceDropdownList(VisualElement visualElement, int num){
-        var dropdown = visualElement.Q<DropdownField>("SequenceDropdown");
-        dropdown.choices.Clear();
-        foreach(Transform sequence in _fireworksMonitor.sequences){
-            dropdown.choices.Add($"{sequence.name}");
+    // void SetSequenceDropdownList(VisualElement visualElement, int num){
+    //     var dropdown = visualElement.Q<DropdownField>("SequenceDropdown");
+    //     dropdown.choices.Clear();
+    //     foreach(Transform sequence in _fireworksMonitor.sequences){
+    //         dropdown.choices.Add($"{sequence.name}");
 
 
-        }
+    //     }
 
-        dropdown.index = num;
+    //     dropdown.index = num;
 
-        dropdown.RegisterValueChangedCallback(evt =>
-        {
-            Debug.Log($"{evt.newValue}");
-            foreach(Transform sequence in _fireworksMonitor.sequences){
+    //     dropdown.RegisterValueChangedCallback(evt =>
+    //     {
+    //         Debug.Log($"{evt.newValue}");
+    //         foreach(Transform sequence in _fireworksMonitor.sequences){
 
-            Debug.Log($"{sequence.name}");
+    //         Debug.Log($"{sequence.name}");
 
-                if(sequence.name == evt.newValue){
-                    _fireworksMonitor.SetSequenceToCannon(num,sequence);
+    //             if(sequence.name == evt.newValue){
+    //                 _fireworksMonitor.SetSequenceToCannon(num,sequence);
                     
 
-                }
-            }
-            // if (EditorUtility.DisplayDialog("ドロップダウン", evt.newValue, "OK"))
-            // {
-            //     Debug.Log("Click");
-            // }
-        });
-    }
+    //             }
+    //         }
+    //         // if (EditorUtility.DisplayDialog("ドロップダウン", evt.newValue, "OK"))
+    //         // {
+    //         //     Debug.Log("Click");
+    //         // }
+    //     });
+    // }
     
     
     

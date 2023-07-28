@@ -41,34 +41,34 @@ public class UISampleTest : MonoBehaviour{
         }
     }
 
-    void SetSequenceDropdownList(GameObject dropdownElement, int num){
-        UnityEngine.UI.Dropdown dropdown = dropdownElement.GetComponents<Dropdown>()[0];
-        dropdown.ClearOptions();
-        foreach(Transform sequence in _fireworksMonitor.sequences){
-            // dropdown.AddOptions($"{sequence.name}");
+    // void SetSequenceDropdownList(GameObject dropdownElement, int num){
+    //     UnityEngine.UI.Dropdown dropdown = dropdownElement.GetComponents<Dropdown>()[0];
+    //     dropdown.ClearOptions();
+    //     foreach(Transform sequence in _fireworksMonitor.sequences){
+    //         // dropdown.AddOptions($"{sequence.name}");
 
 
-        }
+    //     }
 
-        // dropdown.index = num;
+    //     // dropdown.index = num;
 
-        // dropdown.RegisterValueChangedCallback(evt =>
-        // {
-        //     Debug.Log($"{evt.newValue}");
-        //     foreach(Transform sequence in _fireworksMonitor.sequences){
+    //     // dropdown.RegisterValueChangedCallback(evt =>
+    //     // {
+    //     //     Debug.Log($"{evt.newValue}");
+    //     //     foreach(Transform sequence in _fireworksMonitor.sequences){
 
-        //     Debug.Log($"{sequence.name}");
+    //     //     Debug.Log($"{sequence.name}");
 
-        //         if(sequence.name == evt.newValue){
-        //             _fireworksMonitor.SetSequenceToCannon(num,sequence);
+    //     //         if(sequence.name == evt.newValue){
+    //     //             _fireworksMonitor.SetSequenceToCannon(num,sequence);
                     
 
-        //         }
-        //     }
-        //     // if (EditorUtility.DisplayDialog("ドロップダウン", evt.newValue, "OK"))
-        //     // {
-        //     //     Debug.Log("Click");
-        //     // }
-        // });
-    }
+    //     //         }
+    //     //     }
+    //     //     // if (EditorUtility.DisplayDialog("ドロップダウン", evt.newValue, "OK"))
+    //     //     // {
+    //     //     //     Debug.Log("Click");
+    //     //     // }
+    //     // });
+    // }
 }
