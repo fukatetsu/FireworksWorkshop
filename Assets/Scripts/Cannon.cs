@@ -59,9 +59,9 @@ public class Cannon : MonoBehaviour
 
     
 
-    public void Launch(){
+    public void Launch(float charge){
         if(_maxExecution > _howManyExecution){
-            _sequence.Launch(_howManyExecution);
+            _sequence.Launch(_howManyExecution, charge);
             _howManyExecution++;
         }
         

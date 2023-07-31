@@ -39,7 +39,7 @@ public class ParticleSoundSystem: MonoBehaviour
     void Update()
     {
         // var amount = Mathf.Abs(_currentNumberOfParticles - _parentParticleSystem.particleCount);
-        var amount = Random.Range(15, 25);
+        var amount = Random.Range(3, 3);
 
         if (_parentParticleSystem.particleCount < _currentNumberOfParticles) 
         { 
@@ -64,7 +64,7 @@ public class ParticleSoundSystem: MonoBehaviour
     private IEnumerator PlaySound(AudioClip clip, int amount)
     {
         var distanceToPlayer    = Vector3.Distance(this.transform.position, _playerTransform.position);
-        var soundDelay          = distanceToPlayer / 343; //Speed of sound https://en.wikipedia.org/wiki/Speed_of_sound
+        var soundDelay          = distanceToPlayer / 1300; //Speed of sound https://en.wikipedia.org/wiki/Speed_of_sound
 
         //Debug.Log($"Distance to player '{distanceToPlayer}', therefore delayed sound of '{soundDelay}' sec.");
 
@@ -78,7 +78,7 @@ public class ParticleSoundSystem: MonoBehaviour
             
             sound.SetVolume(1.0f);
             sound.Min3DDistance = 20;
-            sound.Max3DDistance = 10000;
+            sound.Max3DDistance = 1000;
             sound.SpatialBlend  = 1f;
             sound.Spread        = 60f;
             sound.DopplerLevel  = 0f;

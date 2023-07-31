@@ -36,9 +36,13 @@ public class Sequence
     /// num番目の花火の発射
     /// </summary>
     /// <param name="num">添え字</param>
-    public void Launch(int num){
+    public void Launch(int num, float charge){
         if(num < _fireworks.Count){
-            _fireworks[num].GetComponent<ParticleSystem>().Play();
+             ParticleSystem particle = _fireworks[num].GetComponent<ParticleSystem>();
+            var em = particle.emission;
+            em.enabled = true;
+            em.rateOverTime = charge;
+            particle.Play();
         }
 
     }
