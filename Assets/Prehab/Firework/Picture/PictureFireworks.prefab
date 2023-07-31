@@ -118,9 +118,9 @@ ParticleSystem:
     enabled: 1
     startLifetime:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1.5
-      minScalar: 5
+      minMaxState: 3
+      scalar: 0.8
+      minScalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -172,8 +172,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 200
-      minScalar: 240
+      scalar: 220
+      minScalar: 300
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4899,6 +4899,7 @@ MonoBehaviour:
   DieSounds:
   - {fileID: 0}
   DelayTime: 0
+  volume: 1
 --- !u!1 &34291089750641260
 GameObject:
   m_ObjectHideFlags: 0
@@ -4912,6 +4913,7 @@ GameObject:
   - component: {fileID: 34291089750641263}
   - component: {fileID: 8671191890912942027}
   - component: {fileID: 4723864417844878152}
+  - component: {fileID: 5337505202668627311}
   m_Layer: 0
   m_Name: Spark
   m_TagString: Untagged
@@ -9778,7 +9780,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34291089750641260}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 691fa3da023cb3c4bbeedf2643327ca4, type: 3}
   m_Name: 
@@ -9788,6 +9790,7 @@ MonoBehaviour:
   DieSounds:
   - {fileID: 0}
   DelayTime: 0.05
+  volume: 50000
 --- !u!23 &4723864417844878152
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9830,6 +9833,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5337505202668627311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34291089750641260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691fa3da023cb3c4bbeedf2643327ca4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BornSounds:
+  - {fileID: 8300000, guid: 048d684fdb14bec40a62d374d4ee5c64, type: 3}
+  - {fileID: 8300000, guid: 18acf4f0478a06946b769c9010e7235c, type: 3}
+  - {fileID: 8300000, guid: 37f7fecebd0ca2142bec593d474b5733, type: 3}
+  - {fileID: 8300000, guid: 9dc628a177ac2254c8095362ce6a2feb, type: 3}
+  DieSounds:
+  - {fileID: 0}
+  DelayTime: 0
+  volume: 1
 --- !u!1 &8677065357625156629
 GameObject:
   m_ObjectHideFlags: 0
