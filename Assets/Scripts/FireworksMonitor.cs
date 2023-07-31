@@ -11,16 +11,16 @@ public class FireworksMonitor : MonoBehaviour
     [SerializeField] private List<Cannon> _cannon;
 
     public List<Cannon> Cannon { get; set; }
+    private int[] _cannonSequenceNum = new int []{0,0,0};
 
-    private int[] _cannonSequenceNum;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        _cannonSequenceNum = new int []{0,0,0};
         _cannon[0].SetSequence(_leftSequences[0]);
-        _cannon[1].SetSequence(_rightSequences[0]);
-        _cannon[2].SetSequence(_centerSequences[0]);
+        _cannon[2].SetSequence(_rightSequences[0]);
+        _cannon[1].SetSequence(_centerSequences[0]);
 
     }
 
@@ -36,7 +36,7 @@ public class FireworksMonitor : MonoBehaviour
         Debug.Log($"Launch button {num}");
         if(_ballStateMonitor.BallState[num].IsCharged){
 
-            _cannon[num].Launch();
+            _cannon[num].Launch(_ballStateMonitor.HowCharged(num)/16);
             if(_cannon[num].MaxExecution == _cannon[num].HowManyExecution){
                 _cannon[num].Reset();
                 _ballStateMonitor.Launch(num);
@@ -54,24 +54,27 @@ public class FireworksMonitor : MonoBehaviour
 
         switch(cannonNum){
             case 0:
-
+                    Debug.Log("testleft2");
+                
                 _cannonSequenceNum[cannonNum]++;
                 if(_leftSequences.Count > _cannonSequenceNum[cannonNum]){
-
+                    Debug.Log($"{_leftSequences.Count}>{_cannonSequenceNum[cannonNum]}");
                     _cannon[cannonNum].SetSequence(_leftSequences[_cannonSequenceNum[cannonNum]]);
                     
                 }
                 break;
-            case 1:
+            case 2:
                 _cannonSequenceNum[cannonNum]++;
                 if(_centerSequences.Count > _cannonSequenceNum[cannonNum]){
+                    Debug.Log($"{_centerSequences.Count}>{_cannonSequenceNum[cannonNum]}");
                     
                     _cannon[cannonNum].SetSequence(_rightSequences[_cannonSequenceNum[cannonNum]]);
                 }
                 break;
-            case 2:
+            case 1:
                 _cannonSequenceNum[cannonNum]++;
                 if(_rightSequences.Count > _cannonSequenceNum[cannonNum]){
+                    Debug.Log($"{_rightSequences.Count}>{_cannonSequenceNum[cannonNum]}");
                     
                     _cannon[cannonNum].SetSequence(_centerSequences[_cannonSequenceNum[cannonNum]]);
                 }

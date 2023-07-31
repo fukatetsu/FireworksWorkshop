@@ -65,7 +65,7 @@ public class BallStateMonitor : MonoBehaviour
         return _ballState[num].HowCharged;
     }
     public void BallChargeFromButton(int num ){
-        _ballState[num].BallCharge(1000);
+        _ballState[num].BallCharge(100);
     }
 }
 
