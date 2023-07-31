@@ -14,7 +14,7 @@ public class Sequence
         foreach (Transform childObject in transform)
         {
              _fireworks.Add(childObject); 
-             _fireworks.Last().transform.position += position; 
+             _fireworks.Last().transform.position = position; 
         }
     }
 

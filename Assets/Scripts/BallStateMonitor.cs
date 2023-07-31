@@ -48,7 +48,7 @@ public class BallStateMonitor : MonoBehaviour
         float[] data = udpReceiver[num].GetData();
         _ballState[num].BallCharge(new Vector3(data[1], data[2], data[3]).magnitude/100);
 
-    }
+    } 
 
     /// <summary>
     /// 花火の発射
@@ -63,6 +63,9 @@ public class BallStateMonitor : MonoBehaviour
 
     public float HowCharged(int num){
         return _ballState[num].HowCharged;
+    }
+    public void BallChargeFromButton(int num ){
+        _ballState[num].BallCharge(1000);
     }
 }
 
