@@ -9696,7 +9696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BornSounds:
-  - {fileID: 8300000, guid: 5782b5508b2b85e46a2f33a64351f391, type: 3}
+  - {fileID: 8300000, guid: 5babe60dd5d8a734faa7f3c838f3db02, type: 3}
   DieSounds:
   - {fileID: 0}
   DelayTime: 0
@@ -19485,7 +19485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BornSounds:
-  - {fileID: 8300000, guid: 5782b5508b2b85e46a2f33a64351f391, type: 3}
+  - {fileID: 8300000, guid: 5babe60dd5d8a734faa7f3c838f3db02, type: 3}
   DieSounds:
   - {fileID: 0}
   DelayTime: 0

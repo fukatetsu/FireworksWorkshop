@@ -16,6 +16,7 @@ public class ParticleSoundSystem: MonoBehaviour
 
     [SerializeField] private float DelayTime = 0f;
     private Transform _playerTransform;
+    public float volume = 1.0f;
 
     private void Awake()
     {
@@ -76,9 +77,9 @@ public class ParticleSoundSystem: MonoBehaviour
             int soundId         = EazySoundManager.PrepareSound(clip, Random.Range(0.8f, 1.2f), false, this.transform);
             var sound           = EazySoundManager.GetSoundAudio(soundId);
             
-            sound.SetVolume(1.0f);
+            sound.SetVolume(volume);
             sound.Min3DDistance = 20;
-            sound.Max3DDistance = 1000;
+            sound.Max3DDistance = 800;
             sound.SpatialBlend  = 1f;
             sound.Spread        = 60f;
             sound.DopplerLevel  = 0f;

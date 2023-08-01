@@ -14587,6 +14587,7 @@ MonoBehaviour:
   DieSounds:
   - {fileID: 0}
   DelayTime: 0
+  volume: 1
 --- !u!1 &8899039260458493736
 GameObject:
   m_ObjectHideFlags: 0
@@ -19471,6 +19472,7 @@ MonoBehaviour:
   DieSounds:
   - {fileID: 0}
   DelayTime: 0.05
+  volume: 1
 --- !u!114 &7571337543353538690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19491,3 +19493,4 @@ MonoBehaviour:
   DieSounds:
   - {fileID: 0}
   DelayTime: 0
+  volume: 1
