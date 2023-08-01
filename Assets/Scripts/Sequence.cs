@@ -41,7 +41,7 @@ public class Sequence
              ParticleSystem particle = _fireworks[num].GetComponent<ParticleSystem>();
             var em = particle.emission;
             em.enabled = true;
-            em.rateOverTime = charge;
+            em.rateOverTime = charge+1;
             particle.Play();
         }
 

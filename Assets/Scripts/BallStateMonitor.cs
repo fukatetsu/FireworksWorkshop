@@ -46,7 +46,14 @@ public class BallStateMonitor : MonoBehaviour
     /// <param name="num">BallStateの添え字</param>
     void BallUpdate(int num){
         float[] data = udpReceiver[num].GetData();
-        _ballState[num].BallCharge(new Vector3(data[1], data[2], data[3]).magnitude/100);
+        var acc = new Vector3(data[1], data[2], data[3]).magnitude;
+        if(acc > 1.5){
+
+            _ballState[num].BallCharge(acc/100);
+        }else{
+            // _ballState[num].BallCharge(0.1f/100);
+        }
+
 
     } 
 
@@ -95,7 +102,7 @@ public class BallState{
 
     public BallState(){
        _howCharged = 0.0f;
-       _isCharged = false;
+       _isCharged = true;
     }
 
     /// <summary>
@@ -113,7 +120,7 @@ public class BallState{
     /// </summary>
     public void ResetBallCharge(){
         _howCharged = 0.0f;
-        _isCharged = false;
+        _isCharged = true;
         Debug.Log($"Ball was reset");
 
     }
