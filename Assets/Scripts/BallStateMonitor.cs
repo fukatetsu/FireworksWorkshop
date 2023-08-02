@@ -6,8 +6,14 @@ public class BallStateMonitor : MonoBehaviour
 {
     [SerializeField] private UdpReceiver[] udpReceiver = new UdpReceiver[3];
     private BallState[] _ballState;
+    
     public BallState[] BallState{
         get { return _ballState; }
+    }
+    private float _allBallCharged = 0;
+
+    public float AllBallCharged{
+        get { return _allBallCharged; }
     }
     // Start is called before the first frame update
 
@@ -37,6 +43,10 @@ public class BallStateMonitor : MonoBehaviour
         for(int i = 0; i < udpReceiver.Length; i++){
             BallUpdate(i);
         }
+        _allBallCharged = 0;
+            for(int i = 0; i < _ballState.Length; i++){
+                _allBallCharged += _ballState[i].SumCharged;
+            }
     }
 
 
@@ -52,7 +62,9 @@ public class BallStateMonitor : MonoBehaviour
             _ballState[num].BallCharge(acc/100);
         }else{
             // _ballState[num].BallCharge(0.1f/100);
+            
         }
+
 
 
     } 
@@ -72,7 +84,7 @@ public class BallStateMonitor : MonoBehaviour
         return _ballState[num].HowCharged;
     }
     public void BallChargeFromButton(int num ){
-        _ballState[num].BallCharge(100);
+        _ballState[num].BallCharge(20);
     }
 }
 
@@ -91,6 +103,8 @@ public class BallState{
         get { return _howCharged; }
         set { this._howCharged = value; }
     }
+    private float _sumCharged = 0f;
+    public float SumCharged { get{return this._sumCharged;}}
     /// <summary>
     /// ボールに花火を発射できるだけのエネルギーが溜まっているか
     /// </summary>
@@ -102,7 +116,7 @@ public class BallState{
 
     public BallState(){
        _howCharged = 0.0f;
-       _isCharged = true;
+       _isCharged = false;
     }
 
     /// <summary>
@@ -111,7 +125,8 @@ public class BallState{
     /// <param name="charge">エネルギーをためる量</param>
     public void BallCharge(float charge){
         _howCharged += charge;
-        if(_howCharged >=100){
+        _sumCharged += charge;
+        if(_howCharged >=20){
             _isCharged = true;
         }
     }
@@ -120,7 +135,7 @@ public class BallState{
     /// </summary>
     public void ResetBallCharge(){
         _howCharged = 0.0f;
-        _isCharged = true;
+        _isCharged = false;
         Debug.Log($"Ball was reset");
 
     }
